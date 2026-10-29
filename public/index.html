@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSChats · 情感助手与流程助手（功能复刻演示）</title>
+<meta name="description" content="一个帮你维系关系、也帮你把事情一步步办完的 AI 助手。记住重要细节，接住每次对话，重要决定始终在你手里。">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.6-.7L3 21l1.8-4.8A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
+      </span>
+      <span>DSChats</span>
+    </a>
+    <div class="nav-links">
+      <a href="#assistants">助手</a>
+      <a href="#how">上手</a>
+      <a href="#channels">渠道</a>
+      <a href="#start">开始</a>
+      <a href="#faq">常见问题</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-quiet btn-sm" href="/login">登录</a>
+      <a class="btn btn-primary btn-sm" href="/register">开始使用</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="inner">
+    <div>
+      <span class="eyebrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        两个助手，一个关系引擎
+      </span>
+      <h1>帮你维系关系，<br>也帮你把事情<em>一步步办完</em>。</h1>
+      <p class="lede">记住重要细节，接住每次对话。日常沟通交给助手，重要决定始终在你手里。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/register">
+          开始使用
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#assistants">看看两种助手</a>
+      </div>
+      <p class="hero-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        先设置、再试聊，由你决定何时启用。默认不自动发送。
+      </p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-head">
+        <span class="avatar avatar-indigo">林</span>
+        <div>
+          <div class="name">小林</div>
+          <div class="sub">Telegram · 演示对话</div>
+        </div>
+        <span class="badge badge-indigo"><span class="dot"></span> AI 草稿</span>
+      </div>
+      <div class="demo-body">
+        <div class="bubble bubble-in">今天的汇报终于结束了，松了一口气。</div>
+        <div class="bubble bubble-out">
+          我还记得你之前提过「周三要做项目汇报」。结束了就先放一放，晚上奖励自己一顿好的。
+          <span class="bubble-meta">引用了 1 条记忆 · 未发送，等待你确认</span>
+        </div>
+        <div class="demo-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="memory-strip">
+        <div class="label">本次命中的记忆</div>
+        <div class="memory-chips">
+          <span class="chip"><b>昨天</b> 担心汇报</span>
+          <span class="chip"><b>今天</b> 汇报结束</span>
+          <span class="chip"><b>语气</b> 轻松</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section section-alt" id="assistants">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">两种需要，两位助手</div>
+      <h2>选适合这个账号的助手。</h2>
+      <p>每个账号首次选择一种助手，确认后固定使用。不同账号的资料和记忆独立管理，互不干扰。</p>
+    </div>
+
+    <div class="assistant-grid">
+      <article class="assistant-card emotional">
+        <span class="ac-index">01</span>
+        <div class="ac-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        </div>
+        <h3>情感助手</h3>
+        <p class="desc">聊得自然，也记得用心。</p>
+        <ul class="ac-list">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>学习你的说话方式，记住共同经历与重要约定</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>每位联系人有独立记忆，不会串味</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>可设定性格、语气与相处边界</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>随时暂停，亲自接手</li>
+        </ul>
+      </article>
+
+      <article class="assistant-card process">
+        <span class="ac-index">02</span>
+        <div class="ac-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        </div>
+        <h3>流程助手</h3>
+        <p class="desc">每个下一步，都交代清楚。</p>
+        <ul class="ac-list">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>按你的业务资料搭建办理流程</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>支持分支流程与未回复提醒</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>「对方自述」与「已核实」分开记录</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>关键进展提醒你亲自确认</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">从这里开始</div>
+      <h2>三步，把助手变成你的帮手。</h2>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">STEP 01</div>
+        <h3>连接聊天账号</h3>
+        <p>按提示在自己的设备上确认授权，无需交出账号密码。演示版支持 Telegram Bot 通道。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">STEP 02</div>
+        <h3>点选偏好，补充资料</h3>
+        <p>情感助手了解你的表达习惯；流程助手学习你的办理步骤与业务资料。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">STEP 03</div>
+        <h3>先试聊，再开始</h3>
+        <p>检查回复、调整规则，再为指定联系人选择「草稿 / 自动发送」。默认只给草稿。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="channels">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">支持渠道</div>
+      <h2>用你已有的账号，继续聊天。</h2>
+      <p>各渠道的连接、自动回复与媒体能力分别开放，以工作台中的实际状态为准。</p>
+    </div>
+    <div class="channels">
+      <div class="channel">
+        <span class="channel-mark" style="background:linear-gradient(135deg,#38bdf8,#0284c7)">T</span>
+        <div><div class="c-name">Telegram</div><div class="c-status">Bot API 通道</div></div>
+        <span class="badge badge-green">可用</span>
+      </div>
+      <div class="channel">
+        <span class="channel-mark" style="background:linear-gradient(135deg,#4ade80,#15803d)">W</span>
+        <div><div class="c-name">WhatsApp</div><div class="c-status">Business Cloud API</div></div>
+        <span class="badge badge-amber">待接入</span>
+      </div>
+      <div class="channel">
+        <span class="channel-mark" style="background:linear-gradient(135deg,#a3e635,#4d7c0f)">L</span>
+        <div><div class="c-name">LINE</div><div class="c-status">规划中</div></div>
+        <span class="badge">未开放</span>
+      </div>
+      <div class="channel">
+        <span class="channel-mark" style="background:linear-gradient(135deg,#60a5fa,#1d4ed8)">Z</span>
+        <div><div class="c-name">Zalo</div><div class="c-status">规划中</div></div>
+        <span class="badge">未开放</span>
+      </div>
+      <div class="channel">
+        <span class="channel-mark" style="background:linear-gradient(135deg,#818cf8,#3730a3)">S</span>
+        <div><div class="c-name">Signal</div><div class="c-status">规划中</div></div>
+        <span class="badge">未开放</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="start">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">直接可用</div>
+      <h2>注册就能用，没有套餐与付费墙。</h2>
+      <p>本地部署、单工作区、全部功能开放。你只需要一个邮箱。</p>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">01 / 免费</div>
+        <h3>无订阅、无按量计费</h3>
+        <p>情感助手、流程助手、翻译、审计全部开放，不设账号档位与额度门槛。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02 / 开箱</div>
+        <h3>不配置也能跑</h3>
+        <p>未接模型时使用内置规则引擎，注册后即可完整体验；登录后在「设置 → AI 模型」填自己的 API Key，自动升级为真实大模型。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03 / 本地</div>
+        <h3>Key 是你自己的</h3>
+        <p>每个账号用自己的 Key，加密存储、只存密文，用完各自的额度，部署包里不含任何密钥。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">常见问题</div>
+      <h2>你可能想知道。</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>会立即替我发送消息吗？</summary>
+        <div class="answer">不会。连接账号、保存资料和发布配置都不会直接开启自动发送。你需要为每个联系人选择回复方式（关闭 / AI 草稿 / 自动发送），也可以随时亲自接手。全局默认处于暂停状态。</div>
+      </details>
+      <details>
+        <summary>能同时用两种助手吗？</summary>
+        <div class="answer">可以为不同账号选择不同助手。每个账号首次确认一种助手，之后不能更改类型；不同账号的资料与记忆独立管理。</div>
+      </details>
+      <details>
+        <summary>流程助手会替我核实业务结果吗？</summary>
+        <div class="answer">不会。它会区分「对方说已完成」和「已由你核实」两种状态。需要核实的关键进展会交给你，不会仅凭一句回复就认定业务完成。</div>
+      </details>
+      <details>
+        <summary>我的聊天记录会被怎么处理？</summary>
+        <div class="answer">演示版把数据保存在本地 JSON 文件中，不会上传到任何第三方。正式产品需要明确数据存储位置、留存期限与跨境处理方式，并提供导出与删除能力。</div>
+      </details>
+      <details>
+        <summary>需要付费吗？有套餐限制吗？</summary>
+        <div class="answer">不需要。本复刻版已移除套餐与付费墙，注册后即可使用全部功能，也不限制账号数量。大模型 Key 由你自己提供：登录后在「设置 → AI 模型」里填写，费用直接由模型服务商按你的用量收取，平台不经手。不填也能用内置规则引擎。</div>
+      </details>
+      <details>
+        <summary>我的 API Key 安全吗？</summary>
+        <div class="answer">Key 用 AES-256-GCM 加密后存在服务器的 <code>data/db.json</code>，加密主密钥是服务器本地生成的 <code>data/.secret</code>。接口只返回掩码（如 <code>gsk_••••••••OfH2</code>），明文永远不会回传到浏览器，也不会出现在任何部署文件里。你可以随时在设置里覆盖或清除。</div>
+      </details>
+      <details>
+        <summary>这是官方产品吗？</summary>
+        <div class="answer">不是。这是依据 dschats.com 公开功能整理的复刻演示，用于功能验证与二次开发，与官方无关联。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-band">
+    <h2>把时间留给重要的人和事。</h2>
+    <p>注册后即可载入演示数据，先试聊，再决定要不要开启自动化。</p>
+    <a class="btn" href="/register">
+      开始使用
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 DSchats 复刻演示 · 非官方产品</span>
+    <div class="links">
+      <a href="/login">登录</a>
+      <a href="/register">注册</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

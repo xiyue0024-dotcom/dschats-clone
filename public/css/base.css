@@ -1,0 +1,192 @@
+/* ============ 设计变量 ============ */
+:root {
+  --ink: #0b1220;
+  --ink-2: #1e293b;
+  --muted: #64748b;
+  --muted-2: #94a3b8;
+  --line: #e5e9f2;
+  --line-2: #eef2f8;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --indigo: #4f46e5;
+  --indigo-2: #6366f1;
+  --indigo-soft: #eef0ff;
+  --cyan: #0891b2;
+  --cyan-soft: #e6f7fb;
+  --pink: #db2777;
+  --pink-soft: #fdf0f7;
+  --green: #059669;
+  --green-soft: #e8f7f1;
+  --amber: #b45309;
+  --amber-soft: #fdf5e7;
+  --red: #dc2626;
+  --red-soft: #fdecec;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, .04);
+  --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, .08);
+  --shadow: 0 16px 40px -20px rgba(15, 23, 42, .25);
+  --shadow-lg: 0 40px 80px -40px rgba(15, 23, 42, .35);
+  --sidebar: 248px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; border: none; background: none; }
+img, svg { display: block; }
+
+::selection { background: #dbeafe; }
+
+/* ============ 通用组件 ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease, color .16s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: #fff;
+  box-shadow: 0 10px 22px -12px rgba(79, 70, 229, .9);
+}
+.btn-primary:hover { box-shadow: 0 14px 28px -12px rgba(79, 70, 229, .95); }
+.btn-ghost {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  box-shadow: var(--shadow-xs);
+}
+.btn-ghost:hover { border-color: #cbd5e1; background: #fbfcfe; }
+.btn-quiet { color: var(--muted); }
+.btn-quiet:hover { color: var(--ink); background: #eef1f7; }
+.btn-danger { background: var(--red-soft); color: var(--red); }
+.btn-danger:hover { background: #fbdcdc; }
+.btn-sm { height: 34px; padding: 0 12px; font-size: 13px; border-radius: 9px; }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+.field { display: block; margin-bottom: 16px; }
+.field > span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 7px;
+}
+.input, .textarea, .select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 11px;
+  padding: 11px 13px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+.input::placeholder, .textarea::placeholder { color: #a8b3c4; }
+.input:focus, .textarea:focus, .select:focus {
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, .12);
+}
+.textarea { resize: vertical; min-height: 88px; line-height: 1.6; }
+.select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  background: #f1f5f9;
+  color: var(--muted);
+}
+.badge-indigo { background: var(--indigo-soft); color: var(--indigo); }
+.badge-cyan { background: var(--cyan-soft); color: var(--cyan); }
+.badge-green { background: var(--green-soft); color: var(--green); }
+.badge-amber { background: var(--amber-soft); color: var(--amber); }
+.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-pink { background: var(--pink-soft); color: var(--pink); }
+
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.tiny { font-size: 12px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.strong { font-weight: 600; color: var(--ink); }
+.hidden { display: none !important; }
+
+/* ============ 滚动条 ============ */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #d5dce8; border-radius: 999px; border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: #b9c4d6; background-clip: content-box; border: 3px solid transparent; }
+::-webkit-scrollbar-track { background: transparent; }
+
+
+/* 品牌标识（全局，避免各页面单独定义导致尺寸丢失） */
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4 60%, #ec4899);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px -6px rgba(79, 70, 229, .8);
+}
+.brand-mark svg { width: 17px; height: 17px; }
+
+/* ============ 通用动画 ============ */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .45; }
+}
+@keyframes blink {
+  0%, 100% { opacity: .25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}

@@ -1,0 +1,27 @@
+# ---------- 运行时数据 ----------
+# 用户、密码哈希、聊天记录、加密后的模型 Key
+data/db.json
+data/*.tmp
+# 加密主密钥：绝对不能进仓库
+data/.secret
+
+# ---------- 环境变量 ----------
+.env
+.env.local
+.env.*.local
+
+# ---------- 依赖与构建 ----------
+node_modules/
+dist/
+build/
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# ---------- 其他 ----------
+docs/
+.workbuddy-ai/

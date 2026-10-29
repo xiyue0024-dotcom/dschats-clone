@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 语法检查 + 冒烟测试
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 语法检查
+        run: npm run check
+
+      - name: 冒烟测试
+        run: npm run smoke
+
+  docker:
+    name: Docker 构建
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 构建镜像
+        run: docker build -t dschats:ci .
+
+      - name: 容器启动并探活
+        run: |
+          docker run -d --name dschats-ci -p 3000:3000 \
+            -e APP_SECRET=ci-secret-0123456789abcdef \
+            dschats:ci
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:3000/healthz > /tmp/hz.json; then break; fi
+            sleep 1
+          done
+          cat /tmp/hz.json
+          grep -q '"ok":true' /tmp/hz.json
+          curl -sf -o /dev/null http://127.0.0.1:3000/
+          docker logs dschats-ci
+          docker rm -f dschats-ci

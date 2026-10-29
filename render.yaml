@@ -1,0 +1,42 @@
+# ============================================================
+#  Render Blueprint —— 推到 GitHub 后，Render 会自动识别这个文件
+#  用法：https://dashboard.render.com/blueprints → New Blueprint Instance
+#
+#  默认走「免费套餐 + Upstash」路线：
+#    免费实例没有持久磁盘，所以数据存到 Upstash Redis（纯 HTTP，免费额度够用）。
+#    部署时会让你填两个 Upstash 变量，不填也能起来，但重启会丢数据。
+#
+#  想用持久磁盘（需要 Starter 及以上套餐）：
+#    删掉下面的 UPSTASH_* 两个变量，把末尾的 disk 段取消注释，
+#    然后不用设 UPSTASH_*，数据会写到 /app/data/db.json。
+# ============================================================
+
+services:
+  - type: web
+    name: dschats
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      # 加密用户模型 Key 的主密钥，Render 自动生成随机值
+      - key: APP_SECRET
+        generateValue: true
+
+      # 可选：填了就把数据存到 Upstash，重启不丢
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+
+      # 可选：Telegram 通道
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+
+    # ---- 持久磁盘方案（需付费套餐，二选一）----
+    # disk:
+    #   name: dschats-data
+    #   mountPath: /app/data
+    #   sizeGB: 1

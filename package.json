@@ -1,0 +1,25 @@
+{
+  "name": "dschats-clone",
+  "version": "1.1.0",
+  "private": true,
+  "description": "DSChats 功能复刻：情感助手 + 流程助手，零依赖 Node.js，可一键部署到 GitHub 连接的各家云平台",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check lib/db.js && node --check lib/auth.js && node --check lib/secret.js && node --check lib/ai.js && node --check lib/telegram.js && node --check public/js/auth.js && node --check public/js/workspace.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai-assistant",
+    "chat-automation",
+    "nodejs",
+    "zero-dependency",
+    "self-hosted"
+  ],
+  "license": "MIT"
+}

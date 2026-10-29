@@ -1,0 +1,31 @@
+# 自建 / 群晖 / 任意支持 Docker 的机器：
+#   docker compose up -d
+#   open http://localhost:3000
+#
+# 数据存在命名卷里，删容器不丢。
+
+services:
+  dschats:
+    build: .
+    image: dschats-clone:latest
+    container_name: dschats
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      HOST: "0.0.0.0"
+      # 不设也可以，会退回到卷里的 data/.secret
+      # APP_SECRET: "换成一串随机值"
+      TELEGRAM_BOT_TOKEN: ""
+    volumes:
+      - dschats-data:/app/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  dschats-data:

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录 / 注册 · DSChats</title>
+<meta name="description" content="登录或创建工作区，开始使用情感助手与流程助手。">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-shell">
+  <section class="auth-story">
+    <div class="story-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.6-.7L3 21l1.8-4.8A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
+        </span>
+        <span>DSChats</span>
+      </a>
+      <div class="kicker">两个助手，一个关系引擎</div>
+      <h2>帮你维系关系，<br>也帮你把事情<br>一步步办完。</h2>
+      <p>情感助手记住相处的细节，流程助手引导每个下一步。日常沟通交给助手，重要决定始终在你手里。</p>
+      <ul class="story-points">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>每位联系人独立记忆，不串味</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>默认只生成草稿，不自动发送</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>AI 生成与人工发送分别留痕</li>
+      </ul>
+      <div class="story-foot">功能复刻演示 · 数据仅保存在本地</div>
+    </div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="eyebrow-plain" id="eyebrow">欢迎回来</div>
+      <h1 id="title">登录你的工作区</h1>
+      <p class="sub" id="subtitle">登录后，继续处理你的聊天与事项。</p>
+
+      <div class="auth-tabs" role="tablist">
+        <button type="button" id="tab-login" class="active">登录</button>
+        <button type="button" id="tab-register">注册</button>
+      </div>
+
+      <div class="auth-error" id="error"></div>
+
+      <form id="form" novalidate>
+        <label class="field">
+          <span>邮箱</span>
+          <input class="input" type="email" id="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required>
+        </label>
+        <label class="field">
+          <span>密码</span>
+          <input class="input" type="password" id="password" autocomplete="current-password" placeholder="至少 8 位" minlength="8" maxlength="128" required>
+        </label>
+        <label class="field hidden" id="confirm-field">
+          <span>确认密码</span>
+          <input class="input" type="password" id="confirm" autocomplete="new-password" placeholder="再输入一次">
+        </label>
+        <button class="btn btn-primary btn-block" type="submit" id="submit">登录</button>
+      </form>
+
+      <p class="auth-switch" id="switch">还没有账号？<a href="#register" id="switch-link">立即注册</a></p>
+      <p class="auth-legal">注册即表示你已年满 18 周岁，并同意仅将本工具用于合法、经对方知情的沟通场景。演示版不会向任何第三方发送数据。</p>
+    </div>
+  </section>
+</div>
+
+<script src="/js/auth.js"></script>
+</body>
+</html>
