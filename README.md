@@ -180,6 +180,7 @@ Key 用 **AES-256-GCM** 加密后存进数据库，接口只返回掩码（`gsk_
 ├── scripts/smoke.js       # 冒烟测试
 ├── data/                  # 运行时数据（git 忽略）
 ├── Dockerfile
+├── docker-entrypoint.sh   # 修正挂载卷属主后降权运行
 ├── docker-compose.yml
 ├── render.yaml            # Render Blueprint
 ├── railway.json
